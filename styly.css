@@ -18,15 +18,17 @@ h1 {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 2rem;
+  font-size: 1.7rem;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  width: 19%;
+  width: 18%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 7rem;
+  margin-top: 6rem;
+  flex-wrap: wrap;
 }
 
 .picture {
@@ -48,6 +50,8 @@ h1 {
   align-items: center;
   padding-top: 1rem;
   border-bottom: 1px solid black;
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
 }
 
 .rules:hover {
@@ -62,6 +66,8 @@ h1 {
   height: 2rem;
   align-items: center;
   padding-top: 1rem;
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
 }
 
 .startgame:hover {
