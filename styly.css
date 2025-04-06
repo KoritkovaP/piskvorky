@@ -1,98 +1,207 @@
-{
-    box-sizing: border-box;
+body {
+  background-image: linear-gradient(#615dad, #ffc8da);
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-size: 0, 9 rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  color: #ffffff;
+
+}
+
+h1 {
+  font-family: "Lobster";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.description {
+  background-color: #283e50;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.7rem;
+}
+
+/* START GAME */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6rem;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+
+}
+
+.picture {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  display: block;
+
+
+}
+
+.text {
+  text-align: center;
+  line-height: 1.5;
+}
+
+.rules {
+  text-align: center;
+  background-color: #1fcca4;
+  color: #ffffff;
+  text-decoration: none;
+  height: 2rem;
+  align-items: center;
+  padding-top: 1rem;
+  border-bottom: 1px solid black;
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
+}
+
+.rules:hover {
+  background-color: #1cbb96;
+}
+
+.startgame {
+  text-align: center;
+  background-color: #0197f6;
+  color: #ffffff;
+  text-decoration: none;
+  height: 2rem;
+  align-items: center;
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
+}
+
+.startgame:hover {
+  background-color: #0090e9;
+}
+
+/* stylování pro pc nebo 700px- check*/
+
+/*@media (max-width: 420px) {
+  .container .picture .description .startgame .rules .text {
+    width: 340px;
+    margin: 0;
   }
+}
 
-  body {
-    background-image: linear-gradient(#615dad, #ffc8da);
-    height: 100vh;
-    font-family: sans-serif;
-    font-size: 0, 9 rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-repeat: no-repeat;
+/* START GAME */
 
-  }
+.game {
+  display: flex;
+  flex-direction: column;
+  max-width: 80vmin;
+}
 
-  h1 {
-    font-family: "Lobster";
-    font-weight: 400;
-    font-style: normal;
-    font-size: 4rem;
-    text-align: center;
-  }
+.game__title {
+  align-self: center;
+  font: 2.7rem bold white;
+  font-family: Lobster;
+  margin: 0 0 5% 0;
+}
 
-  .description {
-    background-color: #283e50;
-    color: #ffffff;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
-    font-size: 1.7rem;
-  }
+.game__navigation {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 2%;
+  margin: 0 0 5% 0;
+}
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    width: 18%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 6rem;
-    flex-wrap: wrap;
+/* gameplayer */
+.gameplayer {
+  display: flex;
+  align-items: center;
+  flex-basis: 50%;
+  background: none;
+  border: none;
+  color: white;
+  /*gap: 8%;*/
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
 
-  }
 
-  .picture {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    display: block;
+.hraje {
+  font-family: sans-serif;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+}
 
-  }
 
-  .text {
-    text-align: center;
-    line-height: 1.5;
-  }
+.game__title {
+  font-family: "Lobster";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 8rem;
+  text-align: center;
+}
 
-  .rules {
-    text-align: center;
-    background-color: #1fcca4;
-    color: #ffffff;
-    text-decoration: none;
-    height: 2rem;
-    align-items: center;
-    padding-top: 1rem;
-    border-bottom: 1px solid black;
-    font-size: 1.7rem;
-    padding-bottom: 1rem;
-  }
+/* game buttons - home and restart*/
+.game__menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7rem;
+}
 
-  .rules:hover {
-    background-color: #1cbb96;
-  }
 
-  .startgame {
-    text-align: center;
-    background-color: #0197f6;
-    color: #ffffff;
-    text-decoration: none;
-    height: 2rem;
-    align-items: center;
-    padding-top: 1rem;
-    font-size: 1.7rem;
-    padding-bottom: 1rem;
-  }
+.greenbutton {
+  background-color: #1fcca4;
+  border-radius: 10%;
+  padding: 1rem;
+  border: none;
+  display: flex;
+  justify-content: stretch;
 
-  .startgame:hover {
-    background-color: #0090e9;
-  }
+}
 
-  /* stylování pro pc */
+.greenbutton:hover {
+  background-color: #1cbb96;
+}
 
-  @media (min-width: 420px) {
-    .uvod {
-      width: 340px;
-      margin: 0;
-    }
-  }
+.bluebutton {
+  background-color: #0197f6;
+  border-radius: 10%;
+  padding: 1rem;
+  border: none;
+  display: flex;
+  justify-content: stretch;
+}
+
+.bluebutton:hover {
+  background-color: #0090e9;
+}
+
+/*playground*/
+
+.playground {
+  display: grid;
+  margin: 0 auto;
+  background-image: linear-gradient(#615dad, #ffc8da);
+  background-repeat: no-repeat;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.game__field {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #000;
+  opacity: 0.5;
+}
