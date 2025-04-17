@@ -204,8 +204,40 @@ h1 {
   height: 3rem;
   border: 1px solid #000;
   opacity: 0.5;
+  cursor: pointer;
+  user-select: none;
 }
 
-.game_field:hover {
+.game__field:hover {
   background-color: aliceblue;
 }
+
+/* Oziveni policek herni plochy */
+
+.game__field--circle {
+  background-image: url("circleBlack.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.game__field--cross {
+  background-image: url("crossBlack.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+}
+
+.circleBlack::after {
+  content: "⭕";
+}
+
+.crossBlack::after {
+  content: "❌";
+}
+
+/* Zmena znazorneni, kdo prave hraje */
