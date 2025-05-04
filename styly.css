@@ -217,13 +217,13 @@ h1 {
 /* Oziveni policek herni plochy */
 
 .game__field--circle {
-  background-image: url("circleBlack.svg");
+  background-image: url("circle-black.svg");
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .game__field--cross {
-  background-image: url("crossBlack.svg");
+  background-image: url("cross-black.svg");
   background-position: center;
   background-repeat: no-repeat;
 }
