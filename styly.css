@@ -220,12 +220,14 @@ h1 {
   background-image: url("circle-black.svg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 80%;
 }
 
 .game__field--cross {
   background-image: url("cross-black.svg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 80%;
 }
 
 button {

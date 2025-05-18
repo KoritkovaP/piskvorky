@@ -5,7 +5,7 @@
 import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
 
 let currentPlayer = 'circle'; // Hru zacina kolecko
-const buttons = document.querySelectorAll('.game__field');
+const button = document.querySelectorAll('.game__field');
 
 //let kdoHraje = document.querySelector('.square');
 
@@ -13,12 +13,12 @@ const buttons = document.querySelectorAll('.game__field');
 const handleClick = (event) => {
   const button = event.target;
   if (currentPlayer === 'circle') {
-    currentButton.classList.add('game__field--circle-black');
-    currentButton.innerHTML = `<img src="circle-black.svg" alt="krouzek">`;
+    button.classList.add('game__field--circle-black');
+    button.innerHTML = `<img src="circle-black.svg" alt="krouzek">`;
     currentPlayer = 'cross';
   } else {
-    currentButton.classList.add('game__field--cross-black');
-    currentButton.innerHTML = `<img src="cross-black.svg" alt="krizek">`;
+    button.classList.add('game__field--cross-black');
+    button.innerHTML = `<img src="cross-black.svg" alt="krizek">`;
     currentPlayer = 'circle';
   }
 
@@ -28,7 +28,7 @@ const handleClick = (event) => {
   }">`;
 
   // zamezeni moznosti zmenit tah opakovanym kliknutim na to stejny button
-  currentButton.disabled = true;
+  button.disabled = true;
 
   let currentField = Array.from(gameButtons);
 
@@ -55,6 +55,36 @@ const handleClick = (event) => {
     }
   }, 100);
 };
+
+if (currentPlayer === 'cross') {
+  const response = await fetch(
+    'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+    {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        board: rewrittenField,
+        player: 'x',
+      }),
+    },
+  );
+  const data = await response.json();
+  const { x, y } = data.position;
+  const field = gameButtons[x + y * 10];
+  field.disabled = false;
+  field.click();
+
+  setTimeout(() => {
+    gameButtons.forEach((button) => {
+      const isTaken =
+        button.classList.contains('game__field--square-circle') ||
+        button.classList.contains('game__field--square-cross');
+      button.disabled = isTaken;
+    });
+  }, 200);
+}
 
 gameButtons.forEach((button) => {
   button.addEventListener('click', chosenButton);
